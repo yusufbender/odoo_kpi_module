@@ -1,0 +1,15 @@
+<odoo>
+    <record id="kpi_demo_1" model="kpi.model">
+        <field name="name">Sales Growth</field>
+        <field name="value">10</field>
+        <field name="target">15</field>
+        <field name="date">2024-01-01</field>
+    </record>
+
+    <record id="kpi_demo_2" model="kpi.model">
+        <field name="name">Customer Satisfaction</field>
+        <field name="value">90</field>
+        <field name="target">85</field>
+        <field name="date">2024-01-01</field>
+    </record>
+</odoo>

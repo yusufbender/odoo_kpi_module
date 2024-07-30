@@ -1,0 +1,25 @@
+<odoo>
+    <template id="assets_backend" name="kpi assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/kpi_module/static/src/css/kpi.css"/>
+            <script type="text/javascript" src="/kpi_module/static/src/js/kpi.js"></script>
+        </xpath>
+    </template>
+
+    <template id="kpi_dashboard" name="KPI Dashboard">
+        <t t-call="web.layout">
+            <div class="o_content">
+                <h1>KPI Dashboard</h1>
+                <t t-foreach="kpis" t-as="kpi">
+                    <div class="kpi">
+                        <h2><t t-esc="kpi.name"/></h2>
+                        <p>Value: <t t-esc="kpi.value"/></p>
+                        <p>Target: <t t-esc="kpi.target"/></p>
+                        <p>Date: <t t-esc="kpi.date"/></p>
+                        <p>Achieved: <t t-esc="kpi.achieved"/></p>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

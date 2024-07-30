@@ -1,0 +1,58 @@
+<odoo>
+    <record id="view_kpi_tree" model="ir.ui.view">
+        <field name="name">kpi.model.tree</field>
+        <field name="model">kpi.model</field>
+        <field name="arch" type="xml">
+            <tree string="KPI List">
+                <field name="name"/>
+                <field name="value"/>
+                <field name="target"/>
+                <field name="date"/>
+                <field name="achieved"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_kpi_form" model="ir.ui.view">
+        <field name="name">kpi.model.form</field>
+        <field name="model">kpi.model</field>
+        <field name="arch" type="xml">
+            <form string="KPI Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="value"/>
+                        <field name="target"/>
+                        <field name="date"/>
+                        <field name="achieved" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_kpi_search" model="ir.ui.view">
+        <field name="name">kpi.model.search</field>
+        <field name="model">kpi.model</field>
+        <field name="arch" type="xml">
+            <search string="KPI Search">
+                <field name="name"/>
+                <field name="date"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_kpi" model="ir.actions.act_window">
+        <field name="name">KPIs</field>
+        <field name="res_model">kpi.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first KPI
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_kpi_root" name="KPI"/>
+    <menuitem id="menu_kpi" name="KPIs" parent="menu_kpi_root" action="action_kpi"/>
+</odoo>
